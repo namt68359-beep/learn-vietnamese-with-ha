@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Learn Vietnamese with Ha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F3EC;--ink:#1F1D2B;--mute:#6B6670;--card:#FFFDF9;--red:#A8322D;--jade:#2E6B5A;--gold:#C8963E;--line:#E2DACA}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 "Be Vietnam Pro",system-ui,sans-serif;color:var(--ink);background:var(--bg);padding:env(safe-area-inset-top,0px) 0 64px}
+header{max-width:900px;margin:auto;padding:28px 20px 10px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+h1{font:700 30px/1.15 Fraunces,Georgia,serif;margin:0}
+.sub{color:var(--mute);font-size:14px;margin:4px 0 0}
+nav{max-width:900px;margin:auto;padding:12px 20px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+main{max-width:900px;margin:auto;padding:20px}
+section{display:none}
+section.on{display:block}
+h2{font:700 24px/1.2 Fraunces,Georgia,serif;margin:0 0 6px}
+h3{font:600 17px "Be Vietnam Pro",sans-serif;margin:24px 0 8px;color:var(--jade)}
+p{margin:6px 0}
+.note{color:var(--mute);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;padding:14px 16px;margin:10px 0}
+.card.j{border-left-color:var(--jade)}
+.card.g{border-left-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px}
+.emo{font-size:28px;line-height:1.2}
+.vi{font-weight:600;font-size:17px}
+table{width:100%;border-collapse:collapse}
+td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+button{font:inherit;cursor:pointer;border-radius:6px;padding:8px 13px;border:1px solid var(--ink);background:transparent;color:var(--ink)}
+button.p{background:var(--ink);color:#fff}
+button.m{background:var(--jade);border-color:var(--jade);color:#fff}
+button:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+select,textarea{font:inherit;padding:8px;border:1px solid #b9b2a4;border-radius:6px;background:#fff;max-width:100%}
+textarea{width:100%;min-height:56px;margin-top:6px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.en{display:none;color:var(--mute);font-style:italic;margin-top:4px}
+.en2{display:none;color:var(--mute);font-style:italic}
+.en.on,body.all .en{display:block}
+.on .en2,body.all .en2{display:inline}
+.sp{display:none}
+.sp.on{display:block}
+.ok{color:var(--jade);font-weight:600}
+.bad{color:var(--red);font-weight:600}
+mark{background:#F1E2B8;padding:0 2px;border-radius:3px}
+.passage{white-space:pre-line;font-size:18px;line-height:1.9;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.score{font:700 28px Fraunces,Georgia,serif;color:var(--jade)}
+.stat{display:inline-block;min-width:150px;margin:6px 14px 6px 0}
+footer{position:fixed;right:14px;bottom:10px;font:600 14px Fraunces,Georgia,serif;color:var(--mute);background:var(--bg);padding:2px 6px;border-radius:4px}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Learn Vietnamese with Ha</h1>
+    <p class="sub">Level A2 · Review: comparisons · Main lesson: Thế nào? / Như thế nào?</p>
+  </div>
+  <button id="allEn">Show all English</button>
+</header>
+<nav>
+  <button data-t="s1" aria-current="true">1 Review</button>
+  <button data-t="s2">2 Main lesson</button>
+  <button data-t="s3">3 Writing</button>
+  <button data-t="s4">4 Reading</button>
+  <button data-t="s5">5 Sentences</button>
+  <button data-t="s6">6 Speaking</button>
+  <button data-t="s7">7 Progress</button>
+</nav>
+<main>
+
+<section id="s1" class="on">
+  <h2>Part 1 · Review: Comparisons</h2>
+  <p class="note">A short warm-up on comparatives and superlatives.</p>
+  <h3>Grammar</h3>
+  <div class="card j" id="g1"><b>Comparative (so sánh hơn)</b><p>A + adjective + hơn + B</p>
+    <p>Hà cao hơn Lan. <span class="en2">Ha is taller than Lan.</span></p>
+    <p>Hôm nay nóng hơn hôm qua. <span class="en2">Today is hotter than yesterday.</span></p>
+    <p>Nhà tôi lớn hơn nhà bạn. <span class="en2">My house is bigger than yours.</span></p>
+    <p>Món này ngon hơn món kia. <span class="en2">This dish is more delicious than the other one.</span></p>
+    <button data-tgl="g1" data-show="Show English" data-hide="Hide English">Show English</button>
+  </div>
+  <div class="card j" id="g2"><b>Superlative (so sánh nhất)</b><p>A + adjective + nhất</p>
+    <p>Hà cao nhất lớp. <span class="en2">Ha is the tallest in the class.</span></p>
+    <p>Đây là món ngon nhất. <span class="en2">This is the most delicious dish.</span></p>
+    <p>Hôm nay là ngày nóng nhất. <span class="en2">Today is the hottest day.</span></p>
+    <button data-tgl="g2" data-show="Show English" data-hide="Hide English">Show English</button>
+  </div>
+
+  <h3>Common adjectives</h3>
+  <div class="grid" id="adj"></div>
+
+  <h3>Exercise 1 · Fill in the blanks</h3>
+  <div id="ex1"></div>
+  <div class="row"><button class="p" id="chk1">Check answers</button><span id="res1"></span></div>
+
+  <h3>Exercise 2 · Look and compare</h3>
+  <p class="note">Write one sentence per picture using hơn.</p>
+  <div id="ex2"></div>
+</section>
+
+<section id="s2">
+  <h2>Part 2 · Main lesson: Thế nào? / Như thế nào?</h2>
+  <p class="note">Core lesson. Read the grammar, learn the vocabulary, then review 30 sentences.</p>
+
+  <h3>Thế nào? / Như thế nào?</h3>
+  <div class="card" id="gA">
+    <p>“Thế nào?” and “như thế nào?” both mean “How?” or “What … like?”. “Thế nào?” is the shorter, everyday form of “như thế nào?”. Use either one to ask about someone’s condition, feelings, or the characteristics of something.</p>
+    <p><b>Structure:</b> A + thế nào? / A + như thế nào?</p>
+    <table>
+      <tr><td>Hôm nay em thế nào?<br><span class="en2">How are you today?</span></td></tr>
+      <tr><td>Dạo này anh thế nào?<br><span class="en2">How have you been lately?</span></td></tr>
+      <tr><td>Mẹ em thế nào?<br><span class="en2">How is your mother?</span></td></tr>
+      <tr><td>Công việc của anh thế nào?<br><span class="en2">How is your work?</span></td></tr>
+      <tr><td>Thời tiết hôm nay thế nào?<br><span class="en2">What’s the weather like today?</span></td></tr>
+      <tr><td>Chuyến đi của em thế nào?<br><span class="en2">How was your trip?</span></td></tr>
+    </table>
+    <button data-tgl="gA" data-show="Show English" data-hide="Hide English">Show English</button>
+  </div>
+
+  <div class="card j" id="gB">
+    <p><b>More examples with “như thế nào?”</b> (often used to ask someone to describe a person, a thing, or a situation).</p>
+    <table>
+      <tr><td>Bạn gái anh như thế nào?<br><span class="en2">What is your girlfriend like?</span></td></tr>
+      <tr><td>Cuộc sống ở Hà Nội như thế nào?<br><span class="en2">What’s life in Hanoi like?</span></td></tr>
+      <tr><td>Công việc mới như thế nào?<br><span class="en2">How is the new job?</span></td></tr>
+      <tr><td>Thời tiết ở đây như thế nào?<br><span class="en2">What’s the weather like here?</span></td></tr>
+      <tr><td>Gia đình bạn như thế nào?<br><span class="en2">What is your family like?</span></td></tr>
+    </table>
+    <button data-tgl="gB" data-show="Show English" data-hide="Hide English">Show English</button>
+  </div>
+
+  <h3>Common uses</h3>
+  <div class="card">
+    <p><b>Cảm thấy thế nào?</b> – How do you feel? Asks about feelings or health. <i>Hôm nay em cảm thấy thế nào? · Anh cảm thấy thế nào rồi?</i></p>
+    <p><b>Thấy … thế nào?</b> – What do you think of …? Asks for someone’s opinion. <i>Em thấy món ăn này thế nào? · Anh thấy Hà Nội thế nào?</i></p>
+  </div>
+
+  <h3>Vocabulary</h3>
+  <div id="vocab"></div>
+
+  <h3>Review · 30 sample sentences</h3>
+  <p class="note">Show English to check each sentence. Mark a sentence to save it to your Progress page.</p>
+  <div id="sent"></div>
+</section>
+
+<section id="s3">
+  <h2>Part 3 · Writing practice</h2>
+  <p class="note">Translate each English sentence into Vietnamese. Each round gives 3 random sentences from a bank of 20. Other natural wordings are accepted when the key words and structure are right.</p>
+  <div id="wr"></div>
+  <div class="row"><button class="p" id="wchk">Check answers</button><button id="wnew">Try another set</button></div>
+  <div id="wfb"></div>
+</section>
+
+<section id="s4">
+  <h2>Part 4 · Reading practice</h2>
+  <p class="note">Read the Vietnamese passage, then answer True or False. The English translation appears after you submit.</p>
+  <div class="passage" id="passage"></div>
+  <h3>True or False</h3>
+  <div id="tf"></div>
+  <div class="row"><button class="p" id="rsub">Submit</button></div>
+  <div id="rres"></div>
+</section>
+
+<section id="s5">
+  <h2>Part 5 · Sentence building</h2>
+  <p class="note">Write a Vietnamese question for each situation, then submit.</p>
+  <div id="sb"></div>
+  <div class="row"><button class="p" id="sbsub">Submit answers</button></div>
+  <div id="sbfb"></div>
+</section>
+
+<section id="s6">
+  <h2>Part 6 · Speaking practice</h2>
+  <p class="note">Say the prompt out loud, then compare with the model answer. Recording needs microphone permission in your browser.</p>
+  <div id="sp"></div>
+</section>
+
+<section id="s7">
+  <h2>Part 7 · Progress</h2>
+  <p class="note">Your progress is saved in this browser so you can continue next time.</p>
+  <div id="prog"></div>
+</section>
+</main>
+
+<footer>Learn Vietnamese with Ha</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let P={checks:[],done:{},marks:[],wrong:[],speak:[]};
+try{P=Object.assign(P,JSON.parse(localStorage.getItem('lvh')||'{}'))}catch(e){}
+function save(){try{localStorage.setItem('lvh',JSON.stringify(P))}catch(e){}}
+function norm(s){return String(s).toLowerCase().normalize('NFC').replace(/[.,!?"“”'’]/g,' ').replace(/\s+/g,' ').trim()}
+function check(ans,must){const t=norm(ans);return t.length>3&&must.every(m=>t.includes(m))}
+function rec(cat,ok){P.checks.push([cat,ok?1:0]);save()}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function catOf(vi){return 'thế nào / như thế nào'}
+function explain(vi){
+  if(vi.includes('cảm thấy'))return 'Thế nào (short for như thế nào) asks about someone’s feelings or health here.';
+  if(vi.includes('thấy'))return 'Thế nào (short for như thế nào) asks for someone’s opinion here.';
+  return 'Thế nào or như thế nào (the same question, the second is just fuller) asks about someone’s condition or the characteristics of something.';
+}
+function fb(ok,vi,en,must,expl){
+  return `<div class="card" style="border-left-color:${ok?'var(--jade)':'var(--red)'}"><p class="${ok?'ok':'bad'}">${ok?'✓ Correct':'✗ Needs revision'}</p>
+  <p><b>Suggested Vietnamese:</b> ${esc(vi)}</p><p><b>English:</b> ${esc(en)}</p>
+  <p><b>Key words:</b> ${must.map(m=>`<mark>${esc(m)}</mark>`).join(' ')}</p><p><b>Structure:</b> ${expl}</p></div>`;
+}
+
+// Global English toggle
+$('#allEn').onclick=()=>{document.body.classList.toggle('all');$('#allEn').textContent=document.body.classList.contains('all')?'Hide all English':'Show all English'};
+
+// Tabs
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-current',x===b));
+  document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));
+  if(b.dataset.t==='s7')renderProgress();
+  window.scrollTo(0,0);
+});
+
+// Generic show/hide toggles and review marks
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-tgl]');
+  if(t){
+    const el=document.getElementById(t.dataset.tgl);el.classList.toggle('on');
+    const on=el.classList.contains('on');
+    t.textContent=on?(t.dataset.hide||'Hide English'):(t.dataset.show||'Show English');return;
+  }
+  const m=e.target.closest('[data-mark]');
+  if(m){const i=+m.dataset.mark;const k=P.marks.indexOf(i);if(k<0)P.marks.push(i);else P.marks.splice(k,1);save();
+    m.classList.toggle('m',k<0);m.textContent=k<0?'Marked for review ✓':'Mark for review';return}
+  const sp=e.target.closest('[data-spk]');
+  if(sp){const i=+sp.dataset.spk;const k=P.speak.indexOf(i);if(k<0)P.speak.push(i);else P.speak.splice(k,1);save();
+    sp.classList.toggle('m',k<0);sp.textContent=k<0?'I practised this':'Practised ✓';return}
+  const rc=e.target.closest('[data-rec]');
+  if(rc)toggleRec(+rc.dataset.rec,rc);
+});
+
+// PART 1
+const ADJ=[['cao','tall','🦒'],['thấp','short','🐥'],['to','big','🐘'],['nhỏ','small','🐭'],['béo','fat','🐷'],['gầy','thin','🪶'],['đẹp','beautiful','🌸'],['xấu','ugly','🌧️'],['trẻ','young','👦'],['già','old','👴'],['nóng','hot','🔥'],['lạnh','cold','❄️'],['nhanh','fast','🐆'],['chậm','slow','🐢'],['tốt','good','👍'],['ngon','delicious','😋']];
+$('#adj').innerHTML=ADJ.map(a=>`<div class="tile"><div class="emo">${a[2]}</div><div class="vi">${a[0]}</div><div class="en" style="display:block">${a[1]}</div></div>`).join('');
+const EX1=[['Hà cao ___ Lan.','hơn'],['Đây là món ăn ngon ___ ở nhà hàng.','nhất'],['Hôm nay nóng ___ hôm qua.','hơn'],['Anh Minh là người cao ___ trong gia đình.','nhất'],['Xe máy chạy nhanh ___ xe đạp.','hơn']];
+$('#ex1').innerHTML=EX1.map((q,i)=>`<div class="card"><div>${i+1}. ${q[0].replace('___',`<select id="b${i}"><option value="">—</option><option>hơn</option><option>nhất</option></select>`)}</div></div>`).join('');
+$('#chk1').onclick=()=>{
+  let c=0;
+  EX1.forEach((q,i)=>{const ok=$('#b'+i).value===q[1];c+=ok;rec('hơn/nhất',ok);$('#b'+i).style.borderColor=ok?'#2E6B5A':'#A8322D'});
+  P.done.p1=c;save();
+  $('#res1').innerHTML=`<span class="score">${c}/5</span> correct. Answers: ${EX1.map((q,i)=>`${i+1}) ${q[1]}`).join(' · ')}. <span class="en2" style="display:inline">Use nhất for “the most” and hơn for comparing two things.</span>`;
+};
+const EX2=[['Người A cao 180 cm. Người B cao 160 cm.','Người A cao hơn người B.'],['Nhà A lớn. Nhà B nhỏ.','Nhà A lớn hơn nhà B.'],['Món A có giá 50.000 đồng. Món B có giá 30.000 đồng.','Món A đắt hơn món B.']];
+$('#ex2').innerHTML=EX2.map((q,i)=>`<div class="card j"><div><b>${esc(q[0])}</b></div><textarea id="c${i}" placeholder="Viết câu của bạn..."></textarea><div class="row"><button class="p" data-c2="${i}">Check</button></div><div id="f2_${i}"></div></div>`).join('');
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-c2]');if(!b)return;
+  const i=+b.dataset.c2;const ok=check($('#c'+i).value,['hơn']);rec('hơn/nhất',ok);
+  if(ok){P.done.p1b=true;save()}
+  $('#f2_'+i).innerHTML=`<p class="${ok?'ok':'bad'}">${ok?'✓ Correct use of hơn.':'✗ Use “hơn” to compare two things.'}</p><p><b>Model:</b> ${EX2[i][1]}</p><p class="en" style="display:block">Structure: A + adjective + hơn + B.</p>`;
+});
+
+// PART 2 vocabulary
+const VOC=[
+ ['Feelings and health',[['vui','happy','😊','Hôm nay tôi vui.','I’m happy today.'],['buồn','sad','😢','Cô ấy buồn.','She is sad.'],['mệt','tired','😴','Anh rất mệt.','I’m very tired.'],['khỏe','healthy / well','💪','Mẹ tôi khỏe.','My mother is well.'],['ốm','sick','🤒','Em bé bị ốm.','The baby is sick.'],['bận','busy','📅','Tuần này tôi bận.','I’m busy this week.'],['rảnh','free','🛋️','Chiều nay tôi rảnh.','I’m free this afternoon.'],['đói','hungry','🍚','Tôi đói rồi.','I’m hungry now.'],['khát','thirsty','🥤','Bạn có khát không?','Are you thirsty?'],['lo lắng','worried','😟','Mẹ lo lắng cho con.','Mom worries about her child.'],['thoải mái','comfortable','🧘','Ghế này thoải mái.','This chair is comfortable.']]],
+ ['Weather',[['nóng','hot','☀️','Trời nóng quá.','It’s so hot.'],['lạnh','cold','🧣','Sáng nay trời lạnh.','It’s cold this morning.'],['mát','cool','🍃','Buổi tối trời mát.','The evening is cool.'],['ấm','warm','🌤️','Phòng này rất ấm.','This room is warm.'],['có gió','windy','💨','Hôm nay có gió.','It’s windy today.'],['nhiều mây','cloudy','☁️','Trời nhiều mây.','It’s cloudy.'],['mưa','rainy','🌧️','Trời mưa to.','It’s raining heavily.'],['có tuyết','snowy','❄️','Ở Nga có tuyết.','There is snow in Russia.']]],
+ ['Describing people and things',[['đẹp','beautiful','🌸','Cô ấy rất đẹp.','She is very beautiful.'],['tốt','good','👍','Anh ấy là người tốt.','He is a good person.'],['dễ','easy','✅','Bài này dễ.','This lesson is easy.'],['khó','difficult','🧩','Tiếng Việt hơi khó.','Vietnamese is a bit difficult.'],['ngon','delicious','😋','Món này ngon.','This dish is delicious.'],['thú vị','interesting','💡','Quyển sách này thú vị.','This book is interesting.'],['vui vẻ','cheerful','😄','Bạn ấy rất vui vẻ.','She is very cheerful.'],['thân thiện','friendly','🤝','Người dân rất thân thiện.','The people are very friendly.']]]
+];
+$('#vocab').innerHTML=VOC.map((g,gi)=>`<div class="card j"><div class="row" style="margin:0 0 8px"><b>${g[0]}</b><button data-tgl="v${gi}" data-show="Show English" data-hide="Hide English">Show English</button></div><div id="v${gi}" class="en"><div class="grid">${g[1].map(w=>`<div class="tile"><div class="emo">${w[2]}</div><div class="vi">${w[0]}</div><div>${w[1]}</div><div style="font-size:14px">${w[3]}<br><i>${w[4]}</i></div></div>`).join('')}</div></div></div>`).join('');
+
+const S30=[
+['Hôm nay em thế nào?','How are you today?'],['Dạo này anh thế nào?','How have you been lately?'],['Mẹ em thế nào?','How is your mother?'],['Bố anh thế nào?','How is your father?'],['Bạn gái em thế nào?','How is your girlfriend?'],
+['Hôm nay em cảm thấy thế nào?','How do you feel today?'],['Anh còn mệt không?','Are you still tired?'],['Mẹ em cảm thấy thế nào rồi?','How does your mother feel now?'],['Sau khi nghỉ ngơi, em thế nào?','After resting, how are you?'],['Hôm nay anh có vui không?','Are you happy today?'],
+['Công việc của anh thế nào?','How is your work?'],['Công việc mới của em thế nào?','How is your new job?'],['Cuộc sống ở Việt Nam thế nào?','What is life in Vietnam like?'],['Gia đình anh như thế nào?','What is your family like?'],['Một ngày của em như thế nào?','What is your day like?'],
+['Hôm nay thời tiết thế nào?','How is the weather today?'],['Hà Nội vào mùa đông như thế nào?','What is Hanoi like in winter?'],['Thời tiết ở đây như thế nào?','What is the weather like here?'],['Hôm nay trời nóng hay lạnh?','Is it hot or cold today?'],['Mùa hè ở Việt Nam như thế nào?','What is summer in Vietnam like?'],
+['Món ăn này thế nào?','How is this dish?'],['Em thấy món phở thế nào?','What do you think of pho?'],['Bộ phim này thế nào?','How is this movie?'],['Chuyến đi của anh thế nào?','How was your trip?'],['Buổi học hôm nay thế nào?','How was today’s class?'],
+['Bạn thân của anh như thế nào?','What is your best friend like?'],['Bạn gái anh là người như thế nào?','What is your girlfriend like?'],['Anh thấy Hà Nội như thế nào?','What do you think of Hanoi?'],['Em thấy nhà hàng này thế nào?','What do you think of this restaurant?'],['Công việc của bố em như thế nào?','What is your father’s job like?']
+];
+const GROUPS=['Group 1 · Asking about people','Group 2 · Health and feelings','Group 3 · Work and daily life','Group 4 · Weather','Group 5 · Food and activities','Group 6 · Describing and giving opinions'];
+const GIDX=[0,5,10,15,20,25,30];
+$('#sent').innerHTML=GROUPS.map((g,gi)=>{
+  let h=`<h3>${g}</h3>`;
+  for(let i=GIDX[gi];i<GIDX[gi+1];i++){
+    const marked=P.marks.includes(i);
+    h+=`<div class="card g"><div class="vi">${i+1}. ${S30[i][0]}</div>
+    <div class="row"><button data-tgl="s${i}" data-show="Show English" data-hide="Hide English">Show English</button>
+    <button data-mark="${i}" class="${marked?'m':''}">${marked?'Marked for review ✓':'Mark for review'}</button></div>
+    <div id="s${i}" class="en">${S30[i][1]}</div></div>`;
+  }
+  return h;
+}).join('');
+
+// PART 3 writing bank: [English, model Vietnamese, required key words]
+const SB=[
+['How are you today?','Hôm nay bạn thế nào?',['thế nào']],
+['How is your work lately?','Dạo này công việc của bạn thế nào?',['công việc','thế nào']],
+['How is your mother?','Mẹ bạn thế nào?',['mẹ','thế nào']],
+['What is your girlfriend like?','Bạn gái bạn như thế nào?',['bạn gái','như thế nào']],
+['What’s the weather like today?','Hôm nay thời tiết thế nào?',['thời tiết','thế nào']],
+['How do you feel today?','Hôm nay bạn cảm thấy thế nào?',['cảm thấy','thế nào']],
+['How is your new job?','Công việc mới của bạn thế nào?',['công việc mới','thế nào']],
+['What is life in Vietnam like?','Cuộc sống ở Việt Nam như thế nào?',['cuộc sống','như thế nào']],
+['How was your trip yesterday?','Chuyến đi của bạn hôm qua thế nào?',['chuyến đi','thế nào']],
+['What do you think of this food?','Bạn thấy món ăn này thế nào?',['thấy','thế nào']],
+['How is your father feeling now?','Bố bạn bây giờ cảm thấy thế nào?',['bố','thế nào']],
+['What’s the weather like in Hanoi?','Thời tiết ở Hà Nội thế nào?',['thời tiết','thế nào']],
+['What is your family like?','Gia đình bạn như thế nào?',['gia đình','như thế nào']],
+['How was the movie last night?','Bộ phim tối qua thế nào?',['phim','thế nào']],
+['How do you feel after resting?','Sau khi nghỉ ngơi, bạn cảm thấy thế nào?',['nghỉ','thế nào']],
+['What do you think of Hanoi?','Bạn thấy Hà Nội thế nào?',['hà nội','thế nào']],
+['How is your younger sister?','Em gái bạn thế nào?',['em gái','thế nào']],
+['What is your best friend like?','Bạn thân của bạn như thế nào?',['bạn thân','như thế nào']],
+['How is your day?','Ngày hôm nay của bạn thế nào?',['ngày','thế nào']],
+['What do you think of this restaurant?','Bạn thấy nhà hàng này thế nào?',['nhà hàng','thế nào']]
+];
+let wSet=[],wPrev=[],wChecked=false;
+function newSet(){
+  let pool=SB.map((_,i)=>i).filter(i=>!wPrev.includes(i));
+  if(pool.length<3)pool=SB.map((_,i)=>i);
+  wSet=shuffle(pool).slice(0,3);wPrev=wSet.slice();wChecked=false;
+  $('#wr').innerHTML=wSet.map((i,k)=>`<div class="card"><div class="vi">${k+1}. ${SB[i][0]}</div><textarea id="w${k}" placeholder="Viết câu tiếng Việt..."></textarea></div>`).join('');
+  $('#wfb').innerHTML='';
+}
+$('#wnew').onclick=newSet;
+$('#wchk').onclick=()=>{
+  let h='';
+  wSet.forEach((i,k)=>{
+    const it=SB[i];const ok=check($('#w'+k).value,it[2]);
+    if(!wChecked){rec(catOf(it[1]),ok);if(!ok&&!P.wrong.includes(it[1]))P.wrong.push(it[1])}
+    h+=fb(ok,it[1],it[0],it[2],explain(it[1]));
+  });
+  wChecked=true;save();$('#wfb').innerHTML=h;
+};
+newSet();
+
+// PART 4 reading
+const PASS=`Minh: Alo, Lan à? Hôm nay em thế nào?
+Lan: Em khỏe, cảm ơn anh. Nhưng hôm qua em hơi mệt.
+Minh: Công việc của em như thế nào?
+Lan: Công việc khá bận, nhưng em thấy thoải mái.
+Minh: Mẹ em thế nào rồi?
+Lan: Mẹ em đã khỏe hơn. Bây giờ mẹ em cảm thấy dễ chịu.
+Minh: Hôm nay trời lạnh, em nhớ mặc ấm nhé.
+Lan: Vâng, cảm ơn anh. Gia đình anh như thế nào?
+Minh: Gia đình anh vẫn khỏe. Cuối tuần này chúng ta đi ăn phở nhé!`;
+const PEN=`Minh: Hello, Lan? How are you today?
+Lan: I’m well, thank you. But yesterday I was a bit tired.
+Minh: How is your work?
+Lan: Work is quite busy, but I feel comfortable.
+Minh: How is your mother now?
+Lan: My mother is better. Now she feels comfortable.
+Minh: It’s cold today, remember to wear warm clothes.
+Lan: Yes, thank you. How is your family?
+Minh: My family is still well. This weekend let’s go eat pho!`;
+const TF=[
+ ['Minh asks Lan about her work.',true,'Minh asks: “Công việc của em như thế nào?” – he asks about her work.'],
+ ['The weather is hot today.',false,'Minh says “Hôm nay trời lạnh”, so the weather is cold, not hot.'],
+ ['Lan’s mother is feeling better.',true,'Lan says “Mẹ em đã khỏe hơn” – her mother is better.'],
+ ['Lan says she is very sick.',false,'Lan says “Em khỏe”, meaning she is well. She was only a bit tired yesterday.'],
+ ['Lan was a little tired yesterday.',true,'Lan says “hôm qua em hơi mệt” – she was a bit tired.']
+];
+$('#passage').textContent=PASS;
+$('#tf').innerHTML=TF.map((q,i)=>`<div class="card"><div>${i+1}. ${q[0]}</div><select id="t${i}"><option value="">—</option><option value="T">True</option><option value="F">False</option></select></div>`).join('');
+$('#rsub').onclick=()=>{
+  let c=0,h='';
+  TF.forEach((q,i)=>{
+    const v=$('#t'+i).value;const ok=v!==''&&((v==='T')===q[1]);c+=ok;rec('reading',ok);
+    h+=`<div class="card" style="border-left-color:${ok?'var(--jade)':'var(--red)'}"><p class="${ok?'ok':'bad'}">${ok?'✓':'✗'} ${i+1}. ${q[0]} Answer: ${q[1]?'True':'False'}</p><p class="en" style="display:block">${q[2]}</p></div>`;
+  });
+  P.done.read=c;save();
+  let p=PASS;['thế nào','như thế nào','khỏe','mệt','công việc','thoải mái','lạnh','mặc ấm','gia đình'].forEach(w=>{p=p.split(w).join(`<mark>${w}</mark>`)});
+  $('#passage').innerHTML=p;
+  $('#rres').innerHTML=`<div class="stat"><span class="score">${c}/5</span> score</div>${h}
+  <div class="card g"><b>English translation</b><p style="white-space:pre-line">${PEN}</p></div>
+  <div class="card j"><b>Grammar notes</b>
+  <p><b>Công việc của em như thế nào?</b> and <b>Mẹ em thế nào rồi?</b> both ask about a condition or characteristic. Thế nào is simply the shorter form of như thế nào.</p>
+  <p><b>Gia đình anh như thế nào?</b> asks Lan to describe Minh’s family.</p>
+  <p>Highlighted words are important vocabulary from this passage.</p></div>`;
+};
+
+// PART 5 sentence building: [scenario, model, key words, sample answer, explanation]
+const SBLD=[
+['You want to ask your girlfriend how she is today.','Hôm nay em thế nào?',['thế nào'],'Hôm nay em khỏe, cảm ơn anh.','Thế nào? asks about someone’s condition.'],
+['You want to ask how her mother is feeling.','Mẹ em cảm thấy thế nào?',['mẹ','thế nào'],'Mẹ em khỏe hơn rồi, cảm ơn anh.','Cảm thấy thế nào? asks about feelings or health.'],
+['You want to ask about her new job.','Công việc mới của em thế nào?',['công việc','thế nào'],'Công việc khá bận, nhưng em thấy thoải mái.','Thế nào? asks about the state of a thing, here her job.'],
+['You want to ask what the weather is like today.','Hôm nay thời tiết thế nào?',['thời tiết','thế nào'],'Hôm nay trời nóng và có nắng.','Thời tiết thế nào? asks what the weather is like.'],
+['You want to ask what kind of person her best friend is.','Bạn thân của em là người như thế nào?',['bạn thân','như thế nào'],'Bạn thân của em rất vui vẻ và thân thiện.','Như thế nào? asks you to describe a person.']
+];
+$('#sb').innerHTML=SBLD.map((q,i)=>`<div class="card"><div>${i+1}. ${q[0]}</div><textarea id="q${i}" placeholder="Viết câu hỏi tiếng Việt..."></textarea></div>`).join('');
+$('#sbsub').onclick=()=>{
+  let h='';
+  SBLD.forEach((q,i)=>{
+    const ok=check($('#q'+i).value,q[2]);rec(catOf(q[1]),ok);
+    if(!ok&&!P.wrong.includes(q[1]))P.wrong.push(q[1]);
+    h+=fb(ok,q[1],q[0],q[2],q[4])+`<p class="note" style="margin:-6px 4px 14px">Sample answer: ${q[3]}</p>`;
+  });
+  save();$('#sbfb').innerHTML=h;
+};
+
+// PART 6 speaking
+const SPK=[
+['Phone call with your girlfriend.','Hôm nay em thế nào?','Hôm nay anh khỏe, cảm ơn em. Còn em thế nào?','I’m fine today, thanks. How about you?'],
+['Ask about her mother’s health.','Mẹ em cảm thấy thế nào rồi?','Mẹ em khỏe hơn chưa? Anh mong mẹ em mau khỏe.','Is your mother feeling better? I hope she gets well soon.'],
+['Talk about work and daily life.','Công việc của em như thế nào?','Công việc của em khá bận, nhưng em thấy vui.','My work is quite busy, but I enjoy it.'],
+['Chat about today’s weather.','Hôm nay thời tiết thế nào?','Hôm nay trời nóng và có nắng.','It’s hot and sunny today.'],
+['Ask for an opinion about a dish.','Em thấy món phở này thế nào?','Món phở này rất ngon, nhưng hơi nóng.','This pho is very delicious, but a bit hot.']
+];
+$('#sp').innerHTML=SPK.map((s,i)=>`<div class="card"><div><b>Situation ${i+1}:</b> ${s[0]}</div>
+<div class="vi" style="margin-top:6px">Prompt: ${s[1]}</div>
+<div class="row">
+  <button data-tgl="m${i}" data-show="Show model answer" data-hide="Hide model answer">Show model answer</button>
+  <button data-tgl="e${i}" data-show="Show English" data-hide="Hide English">Show English</button>
+  <button data-rec="${i}" id="rb${i}">Record my answer</button>
+  <button data-spk="${i}" class="${P.speak.includes(i)?'m':''}">${P.speak.includes(i)?'Practised ✓':'I practised this'}</button>
+</div>
+<div id="m${i}" class="sp"><div class="vi">${s[2]}</div></div>
+<div id="e${i}" class="en">${s[3]}</div>
+<div id="au${i}"></div></div>`).join('');
+let recorder=null,chunks=[],recIdx=-1;
+function toggleRec(i,btn){
+  if(recorder&&recIdx===i){recorder.stop();return}
+  if(!navigator.mediaDevices||!window.MediaRecorder){$('#au'+i).innerHTML='<p class="note">Recording is not available in this browser.</p>';return}
+  navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{
+    chunks=[];recorder=new MediaRecorder(stream);recIdx=i;
+    recorder.ondataavailable=e=>chunks.push(e.data);
+    recorder.onstop=()=>{
+      stream.getTracks().forEach(t=>t.stop());
+      const url=URL.createObjectURL(new Blob(chunks,{type:'audio/webm'}));
+      $('#au'+i).innerHTML=`<audio controls src="${url}"></audio>`;
+      btn.textContent='Record my answer';recorder=null;recIdx=-1;
+    };
+    recorder.start();btn.textContent='Stop recording';
+  }).catch(()=>{$('#au'+i).innerHTML='<p class="note">Microphone permission was not granted.</p>'});
+}
+
+// PART 7 progress
+function renderProgress(){
+  const c=P.checks;
+  const acc=cat=>{const a=c.filter(x=>x[0]===cat);return a.length?Math.round(100*a.filter(x=>x[1]).length/a.length):null};
+  const overall=c.length?Math.round(100*c.filter(x=>x[1]).length/c.length):0;
+  const hint=(cat,label)=>{const v=acc(cat);if(v===null)return `<p><b>${label}:</b> not practised yet</p>`;
+    return `<p><b>${label}:</b> ${v}% correct · ${v>=70?'Good progress':'Practise this structure more'}</p>`};
+  const done=[
+    ['Part 1 · Exercise 1',P.done.p1!==undefined?`${P.done.p1}/5`:'Not done'],
+    ['Part 1 · Exercise 2',P.done.p1b?'Completed':'Not done'],
+    ['Part 3 · Writing answers checked',c.length?'Yes':'Not done'],
+    ['Part 4 · Reading score',P.done.read!==undefined?`${P.done.read}/5`:'Not done'],
+    ['Part 5 · Sentence building',P.checks.some(x=>x[0]==='thế nào'||x[0]==='như thế nào')?'Practised':'Not done'],
+    ['Part 6 · Speaking situations practised',`${P.speak.length}/5`]
+  ];
+  $('#prog').innerHTML=`
+  <div class="card"><span class="stat"><span class="score">${c.length}</span><br>answers checked</span>
+  <span class="stat"><span class="score">${overall}%</span><br>correct overall</span></div>
+  <h3>Completed exercises</h3>
+  ${done.map(d=>`<p><b>${d[0]}:</b> ${d[1]}</p>`).join('')}
+  <h3>Structures to practise</h3>
+  <div class="card j">${hint('thế nào / như thế nào','Thế nào? / Như thế nào?')}${hint('hơn/nhất','Hơn / nhất')}</div>
+  <h3>Sentences marked for review</h3>
+  <div class="card g">${P.marks.length?P.marks.map(i=>`<p>${S30[i][0]} <span class="note">${S30[i][1]}</span></p>`).join(''):'<p class="note">No sentences marked yet. Mark sentences in Part 2.</p>'}</div>
+  <h3>Sentences to review again</h3>
+  <div class="card g">${P.wrong.length?P.wrong.map(w=>`<p>${w}</p>`).join(''):'<p class="note">Nothing yet. Answers you get wrong will appear here.</p>'}</div>
+  <div class="row"><button id="reset">Reset progress</button></div>`;
+  $('#reset').onclick=()=>{if(confirm('Reset all progress in this browser?')){P={checks:[],done:{},marks:[],wrong:[],speak:[]};save();renderProgress()}};
+}
+</script>
+</body>
+</html>
